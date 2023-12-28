@@ -47,8 +47,12 @@ export default function MainHeader() {
       icon: <BookOutlined />,
       children: [
         {
-          label: <Link to={path.classList}>Khóa học</Link>,
+          label: <Link to={path.classList}>Danh sách khóa học</Link>,
           key: 'setting:1'
+        },
+        {
+          label: <Link to={path.inChargeCourse}>Khóa học của tôi</Link>,
+          key: 'setting:2'
         }
       ]
     },
@@ -63,11 +67,11 @@ export default function MainHeader() {
               Bảng lương TA
             </Button>
           ),
-          key: 'setting:2'
+          key: 'setting:3'
         },
         {
           label: <Link to={`/employeeList?job_position=Teacher`}>Danh sách nhân viên</Link>,
-          key: 'setting:3'
+          key: 'setting:4'
         }
       ]
     }
@@ -172,7 +176,7 @@ export default function MainHeader() {
               )}
             </FloatingPortal>
             <div
-              className='z-50 hidden
+              className='z-50 hidden 
                my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600'
             >
               <div className='px-4 py-3 '>
@@ -217,7 +221,9 @@ export default function MainHeader() {
               </ul>
             </div>
           </div>
-          <div>
+          <div             
+           style={{width:"30%"}}
+>
             <Menu
               onClick={onClick}
               selectedKeys={[current]}
