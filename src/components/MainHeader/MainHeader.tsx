@@ -64,7 +64,7 @@ export default function MainHeader() {
         {
           label: (
             <Button rootClassName='border-none pl-0' onClick={onSalaryListNagivate}>
-              Bảng lương TA
+              Bảng lương
             </Button>
           ),
           key: 'setting:3'
@@ -79,7 +79,6 @@ export default function MainHeader() {
   const [current, setCurrent] = useState('mail')
 
   const onClick: MenuProps['onClick'] = (e) => {
-    console.log('click ', e)
     setCurrent(e.key)
   }
   const [open, setOpen] = useState(false)
