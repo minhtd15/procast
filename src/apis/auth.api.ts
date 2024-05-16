@@ -9,6 +9,9 @@ export const resgisterAccount = (body: {
   fullName: string
   password: string
 }) => http.post<AuthResponse>('/e/v1/register', body)
+export interface OauthConfig {
+  code?: string | undefined
+}
 
 export const login = () => http.get<AuthResponse>('/e/v1/login-third-party')
 
@@ -22,3 +25,5 @@ export const validatePassword = (body: { email: string }) => http.post('e/v1/for
 export const validateEmailCode = (body: { email: string; digitCode: number }) => http.post('e/v1/send-digit', body)
 
 export const setNewPassword = (body: { email: string; newPassword: string }) => http.post('e/v1/new-password', body)
+
+export const postOauthCode = (params: OauthConfig) => http.post('i/v1/salary-info', { params })
